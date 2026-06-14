@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริษัท ทิพย์วงศ์ อินดัสเทรียล จำกัด | สลักภัณฑ์และสกรูเกรดอุตสาหกรรม</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Prompt', sans-serif; }
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+
+    <div class="bg-red-950 text-white text-xs py-2.5 px-4 flex flex-col sm:flex-row justify-between items-center gap-2 relative z-50 shadow-md">
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 font-medium">
+            <span class="flex items-center gap-1.5">📞 ฝ่ายขายโรงงาน: 02-XXX-XXXX</span>
+            <span class="hidden sm:inline text-red-800">|</span>
+            <span class="flex items-center gap-1.5">🏢 ที่ตั้ง: ถ.สุขสวัสดิ์ เขตราษฎร์บูรณะ</span>
+            <span class="hidden sm:inline text-red-800">|</span>
+            <span class="flex items-center gap-1.5">✉️ sales@tipwongindustrial.co.th</span>
+        </div>
+        <div class="flex gap-4 font-bold">
+            <span class="text-green-400">🟢 LINE: @tipwong</span>
+            <span class="text-blue-400">🔵 Facebook: Tipwong Industrial</span>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 w-full bg-slate-900 border-b border-slate-800 shadow-xl z-40">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="navigateTo('home')">
+                <div class="bg-gradient-to-r from-red-600 to-red-800 text-white font-black px-4 py-2 rounded-xl tracking-wider text-xl shadow-lg transform hover:scale-105 transition">
+                    TIPWONG
+                </div>
+                <div class="leading-tight hidden sm:block text-white">
+                    <span class="text-xs font-black text-red-500 tracking-widest block">INDUSTRIAL CO., LTD.</span>
+                    <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider">Fasteners & Hardware Solutions</span>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-auto flex-1 max-w-xl mx-0 lg:mx-8">
+                <div class="relative flex items-center">
+                    <input type="text" placeholder="ค้นหาสกรูเมทัลชีท, ซับดาโก้, มาตรฐาน DIN, สแตนเลส, หัวเวเฟอร์..." 
+                           class="w-full bg-slate-800 text-white text-sm pl-4 pr-12 py-3 rounded-xl border border-slate-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-slate-800 transition placeholder-gray-500 font-medium">
+                    <button class="absolute right-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-black px-4 py-2 rounded-lg transition cursor-pointer shadow-md">
+                        ค้นหา
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 shrink-0">
+                <div class="flex flex-wrap justify-center gap-1 font-bold">
+                    <button id="btn-home" onclick="navigateTo('home')" class="nav-btn px-4 py-2 text-sm text-red-500 border-b-2 border-red-500 transition cursor-pointer">หน้าแรก</button>
+                    <button id="btn-shop" onclick="navigateTo('shop')" class="nav-btn px-4 py-2 text-sm text-gray-400 hover:text-red-500 transition cursor-pointer">สินค้าของเรา</button>
+                    <button id="btn-tech" onclick="navigateTo('tech')" class="nav-btn px-4 py-2 text-sm text-gray-400 hover:text-red-500 transition cursor-pointer">ข้อมูลเทคนิค</button>
+                    <button id="btn-contact" onclick="navigateTo('contact')" class="nav-btn px-4 py-2 text-sm text-gray-400 hover:text-red-500 transition cursor-pointer">ติดต่อเรา</button>
+                </div>
+                
+                <div onclick="openCartModal()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2.5 rounded-xl flex items-center gap-2 cursor-pointer transition relative shrink-0 shadow-lg font-bold text-sm">
+                    <span>📋 รายการขอราคา</span>
+                    <span id="cart-count" class="bg-white text-red-700 text-[11px] font-black px-2 py-0.5 rounded-full shadow-inner">0</span>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="page-home" class="page-section active relative w-full min-h-[550px] md:min-h-[calc(100vh-120px)] flex items-center justify-center overflow-hidden bg-slate-950">
+        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60">
+            <source src="assets/tipwong-industrial.mp4" type="video/mp4">
+        </video>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 via-slate-900/50 to-slate-950 z-10"></div>
+
+        <div class="relative z-20 max-w-4xl mx-auto text-center text-white px-4 py-12">
+            <span class="inline-block bg-red-600 text-[11px] font-black tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6 shadow-md border border-white/20">
+                TIPWONG INDUSTRIAL INDUSTRIAL-GRADE FASTENERS
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-2xl">
+                ศูนย์รวมสลักภัณฑ์และสกรู<br><span class="text-red-500">เกรดอุตสาหกรรมหนัก</span>
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-10 font-normal leading-relaxed drop-shadow">
+                มั่นใจในความปลอดภัยสูงสุดด้วยสินค้ามาตรฐานสากล มีเอกสารรับรอง Certificate มิลเทสครบถ้วน พร้อมตอบโจทย์งานโครงสร้างและโรงงานอุตสาหกรรมทั่วประเทศ
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 font-bold">
+                <button onclick="navigateTo('shop')" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    🛒 ดูสินค้า & สั่งซื้อออนไลน์
+                </button>
+                <button onclick="navigateTo('tech')" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl border border-white/20 backdrop-blur-sm transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    📄 ตรวจสอบตารางข้อมูลเทคนิค
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white py-10 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="flex items-start gap-4 p-2">
+                <div class="bg-red-50 p-3 rounded-xl text-red-600 font-bold text-xl shadow-inner">🛡️</div>
+                <div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">ความปลอดภัยและมาตรฐาน</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">สินค้าผ่านการทดสอบแรงดึง แรงบิด ทนทานต่องานหนักพิเศษ</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 p-2">
+                <div class="bg-red-50 p-3 rounded-xl text-red-600 font-bold text-xl shadow-inner">🚚</div>
+                <div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">จัดส่งความเร็วสูง</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">พร้อมจัดส่งด่วนตรงถึงหน้างาน โครงสร้าง หรือโรงงานใน 24 ชั่วโมง</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 p-2">
+                <div class="bg-red-50 p-3 rounded-xl text-red-600 font-bold text-xl shadow-inner">📋</div>
+                <div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">ออกใบรับรองครบถ้วน</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">มีใบกำกับภาษี ใบ Mill Test Report และเอกสารสเปกตามกฎหมาย</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 p-2">
+                <div class="bg-red-50 p-3 rounded-xl text-red-600 font-bold text-xl shadow-inner">⚙️</div>
+                <div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">ทีมงานผู้เชี่ยวชาญ</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">มีวิศวกรและผู้ชำนาญการคอยให้คำปรึกษาการคำนวณสเปกฟรี</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-shop" class="page-section max-w-7xl mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <aside class="w-full lg:w-64 bg-white p-6 rounded-2xl border border-gray-200 shadow-sm shrink-0 h-fit sticky top-28">
+                <div class="flex items-center gap-2 pb-4 mb-5 border-b border-gray-100 text-gray-900 font-black">
+                    <i class="fa-solid fa-filter text-red-600"></i> หมวดหมู่สลักภัณฑ์
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-wider text-gray-400 mb-3">ประเภทสกรู</label>
+                        <div class="space-y-2 text-sm text-gray-600 font-bold">
+                            <label class="flex items-center gap-2.5 cursor-pointer text-red-600"><input type="checkbox" checked class="accent-red-600"> ทั้งหมด</label>
+                            <label class="flex items-center gap-2.5 cursor-pointer hover:text-gray-900"><input type="checkbox" class="accent-red-600"> สกรูเมทัลชีท / งานหลังคา</label>
+                            <label class="flex items-center gap-2.5 cursor-pointer hover:text-gray-900"><input type="checkbox" class="accent-red-600"> สกรูหัวเวเฟอร์ / เกลียวปล่อย</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="flex-1">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6">
+                    <div>
+                        <h2 class="text-xl font-black text-gray-900"><i class="fa-solid fa-boxes-stacked text-red-600"></i> รายการสินค้าจากป้ายแท้จริงของโรงงาน</h2>
+                        <p class="text-xs text-gray-400 font-medium">พี่สามารถเอารูปสินค้าทั้ง 7 ใบ มาใส่ตรงช่อง img src ได้เลยครับ</p>
+                    </div>
+                    <span class="bg-green-100 text-green-700 text-xs px-2.5 py-1 rounded-full font-bold w-fit">● มีสินค้าพร้อมจัดส่งทันที</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายแหลมรองยาง.jpg" alt="สกรูเมทัลชีท ซับดาโก้" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูเมทัลชีท ซับดาโก้ ปลายแหลมรองยาง</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: งานหลังคาและเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                เจาะยึดแน่นหนา ปลายแหลมคมพิเศษ แหวนยางซับกันน้ำรั่วซึมได้ดีเยี่ยมรอบทิศทาง ไม่เป็นสนิมง่าย
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูเมทัลชีท ซับดาโก้ ปลายแหลมรองยาง', ['#10×3/4&quot; (19mm.)', '#12×1&quot; (25mm.)', '#12×1-1/2&quot; (38mm.)', '#10×2&quot; (48mm.)', '#12×2&quot; (48mm.)', '#12×2-1/2&quot; (65mm.)', '#12×3&quot; (75mm.)', '#12×3-1/2&quot; (90mm.)', '#12×4&quot; (100mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายแหลม.jpg" alt="สกรูหัวเวเฟอร์ ปลายแหลม" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายแหลม (Sharp Point)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: งานโครงเบา / ยิปซั่ม</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                เหมาะสำหรับงานยึดแผ่นยิปซั่ม สมาร์ทบอร์ด หรือแผ่นผนังเบาเข้ากับโครงเคร่ากัลวาไนซ์ ปลายแหลมจิกจมได้คมกริบ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายแหลม (Sharp Point)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">บรรจุเยอะ</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน6.jpg" alt="สกรูเวเฟอร์ ปลายสว่าน เบอร์ 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องใหญ่ 1,000 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน #6</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: รุ่นบรรจุกล่องใหญ่ราคาโรงงาน</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                รุ่นกล่องพรีเมียมนึกถึงปริมาณความคุ้มค่า หัวเวเฟอร์เบอร์ 6 สเปกเหนียวเจาะเหล็กง่าย สำหรับผู้รับเหมาโครงการขนาดใหญ่
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน #6', ['#6×3/8&quot; (10mm.)'], 1000)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่านหัว F.jpg" alt="สกรูปลายสว่านหัว F" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูปลายสว่านหัว F (Flat Head)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวเตเปอร์แบนราบ</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                สกรูหัวเรียบฝังเรียบเสมอกับผิววัสดุงาน ปลายเป็นสว่านสำหรับเจาะโครงเหล็กและอลูมิเนียมโดยไม่ต้องเจาะรูนำก่อน
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูปลายสว่านหัว F (Flat Head)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)', '#8×2-1/2&quot; (65mm.)', '#8×3&quot; (75mm.)', '#8×3-1/2&quot; (90mm.)', '#8×4&quot; (100mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">งานไม้</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ไม้ฝ้าไม่มีปีก.jpg" alt="สกรูไม้ ไม่มีปีก" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องยกแพ็คโรงงาน</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูไม้ ไม่มีปีก ปลายแหลมคม</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: สกรูเกลียวหยาบยึดไม้</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                ออกแบบเพื่อยึดเกาะในเนื้อไม้และเฟอร์นิเจอร์ได้อย่างหนาแน่น เกลียวลึกไม่รูดง่าย ปลายแหลมคมจิกจมเนื้อไม้ทันที
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูไม้ ไม่มีปีก ปลายแหลมคม', ['#7×3/4&quot; (19mm.)', '#7×1&quot; (25mm.)', '#7×1-1/8&quot; (28mm.)', '#7×1-1/4&quot; (32mm.)', '#7×1-1/2&quot; (38mm.)', '#7×1-3/4&quot; (45mm.)', '#7×2&quot; (50mm.)'], 500)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">เอนกประสงค์</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/หัวเตเปอร์.jpg" alt="สกรูเกลียวปล่อย หัวเตเปอร์" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องใหญ่บรรจุเยอะ</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูเกลียวปล่อย หัวเตเปอร์ #7</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: สกรูเกลียวปล่อยงานช่าง</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                สกรูอเนกประสงค์เบอร์ 7 ขันแน่นจมมิดหัว สำหรับยึดชิ้นส่วนพลาสติก แผ่นเหล็กบาง หรือไม้ทั่วไปได้อย่างลงตัว
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูเกลียวปล่อย หัวเตเปอร์ #7', ['3/8&quot; (10mm.)', '1/2&quot; (13mm.)', '5/8&quot; (16mm.)', '3/4&quot; (19mm.)', '1&quot; (25mm.)', '1-1/4&quot; (32mm.)', '1-1/2&quot; (38mm.)', '2&quot; (50mm.)', '2-1/2&quot; (65mm.)', '3&quot; (75mm.)'], 500)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="page-tech" class="page-section max-w-7xl mx-auto px-4 py-12">
+        <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm">
+            <h2 class="text-2xl font-black text-slate-900 mb-2">📄 ตารางข้อมูลเทคนิคเกลียวและสเปกวิศวกรรม</h2>
+            <p class="text-sm text-gray-400 mb-6 font-medium">ตารางแสดงขนาดเกลียว, ระยะพิตช์ (Pitch) และมาตรฐานอ้างอิงสำหรับสลักภัณฑ์สากล</p>
+            
+            <div class="overflow-x-auto border border-gray-200 rounded-xl">
+                <table class="w-full text-left border-collapse text-sm font-bold">
+                    <thead>
+                        <tr class="bg-slate-900 text-white font-black tracking-wider">
+                            <th class="p-4 border-b border-slate-700">ขนาดสเปก (Size)</th>
+                            <th class="p-4 border-b border-slate-700">ระยะพิตช์เกลียว (Pitch)</th>
+                            <th class="p-4 border-b border-slate-700">มาตรฐานสากล (DIN)</th>
+                            <th class="p-4 border-b border-slate-700">การรองรับแรงดึง (Tensile)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 text-gray-600 font-bold">
+                        <tr class="hover:bg-gray-50 transition"><td class="p-4 text-gray-900 font-black">M4</td><td class="p-4">0.70 mm</td><td class="p-4">DIN 933 / DIN 912</td><td class="p-4 text-green-600">A2-70 / Grade 8.8</td></tr>
+                        <tr class="hover:bg-gray-50 transition"><td class="p-4 text-gray-900 font-black">M6</td><td class="p-4">1.00 mm</td><td class="p-4">DIN 933 / DIN 912</td><td class="p-4 text-green-600">A2-70 / Grade 8.8</td></tr>
+                        <tr class="hover:bg-gray-50 transition"><td class="p-4 text-gray-900 font-black">M8</td><td class="p-4">1.25 mm</td><td class="p-4">DIN 933 / DIN 912</td><td class="p-4 text-green-600">A2-70 / Grade 10.9</td></tr>
+                        <tr class="hover:bg-gray-50 transition"><td class="p-4 text-gray-900 font-black">M10</td><td class="p-4">1.50 mm</td><td class="p-4">DIN 933 / DIN 912</td><td class="p-4 text-green-600">A4-80 / Grade 12.9</td></tr>
+                        <tr class="hover:bg-gray-50 transition"><td class="p-4 text-gray-900 font-black">M12</td><td class="p-4">1.75 mm</td><td class="p-4">DIN 933 / DIN 912</td><td class="p-4 text-green-600">A4-80 / Grade 12.9</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-contact" class="page-section max-w-3xl mx-auto px-4 py-12">
+        <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl">
+            <h2 class="text-2xl font-black text-slate-900 mb-2 text-center">🏢 ช่องทางการติดต่อฝ่ายขายโครงการ ทิพย์วงศ์</h2>
+            <p class="text-xs text-gray-400 text-center mb-8 font-bold">เปิดให้บริการวันจันทร์ - เสาร์ เวลา 08:30 - 17:30 น. (หยุดวันอาทิตย์)</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 font-bold">
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                    <strong class="text-slate-900 text-base block mb-2 font-black">📍 สำนักงานและคลังใหญ่</strong>
+                    <p class="font-medium text-gray-600 leading-relaxed">ถนนสุขสวัสดิ์ แขวงราษฎร์บูรณะ เขตราษฎร์บูรณะ กรุงเทพมหานคร</p>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                    <strong class="text-slate-900 text-base block mb-2 font-black">📞 ข้อมูลฝ่ายขายสื่อสารด่วน</strong>
+                    <p class="font-medium text-gray-600">เบอร์โทรศัพท์โรงงาน: 02-XXX-XXXX</p>
+                    <p class="text-green-600 font-black mt-1.5">Line Official ID: @tipwong</p>
+                    <p class="font-medium text-gray-600 mt-1">Email: sales@tipwongindustrial.co.th</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="quickview-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden relative flex flex-col md:flex-row border border-gray-100">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 bg-gray-100 hover:bg-red-600 hover:text-white text-gray-700 w-9 h-9 rounded-full flex items-center justify-center font-black z-10 cursor-pointer shadow">✕</button>
+            
+            <div class="w-full md:w-1/2 bg-slate-950 flex flex-col items-center justify-center p-6 text-center text-white border-r border-gray-100">
+                <div class="text-red-500 font-black text-2xl tracking-widest mb-1">TIPWONG</div>
+                <div class="text-[10px] bg-red-600 px-3 py-1 rounded font-black tracking-wider mb-4 shadow-md">INDUSTRIAL BRAND</div>
+                <div class="w-24 h-24 bg-slate-900 rounded-full flex items-center justify-center text-5xl border border-slate-800 shadow-lg mb-4">🔩</div>
+                <div id="modal-packing-text" class="text-xs text-gray-400 font-bold">สินค้าบรรจุตรงตามสเปกกล่องแท้</div>
+            </div>
+            
+            <div class="w-full md:w-1/2 p-6 flex flex-col justify-between bg-white">
+                <div>
+                    <span class="bg-red-100 text-red-600 text-[10px] font-black px-2.5 py-1 rounded mb-2 inline-block">สินค้าสเปกจริงประจำคลัง</span>
+                    <h3 id="modal-title" class="text-lg font-black text-gray-950 mb-1">ชื่อสินค้า</h3>
+                    <p class="text-xs text-gray-400 mb-4 font-bold">เลือกขนาดความยาวตามป้ายตารางสินค้า:</p>
+                    
+                    <div class="mb-5">
+                        <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-2">เลือกขนาดความยาวไซส์:</label>
+                        <select id="product-size-select" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-sm font-bold text-gray-800 focus:ring-2 focus:ring-red-500 outline-none">
+                            </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-2">ระบุจำนวนที่ต้องการ (กล่อง):</label>
+                        <div class="flex items-center gap-2">
+                            <button onclick="adjustQuantity(-1)" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg font-black text-lg cursor-pointer flex items-center justify-center">-</button>
+                            <input type="number" id="product-qty" value="1" min="1" class="w-16 h-10 text-center bg-gray-50 border border-gray-300 rounded-lg font-black text-sm focus:outline-none">
+                            <button onclick="adjustQuantity(1)" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg font-black text-lg cursor-pointer flex items-center justify-center">+</button>
+                            <span class="text-xs text-gray-400 ml-1 font-bold">(รวม <span id="total-pieces" class="font-black text-slate-900">100</span> ตัว)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pt-4 border-t border-gray-100">
+                    <button onclick="addToCartAndNotify()" class="w-full bg-red-600 hover:bg-slate-900 text-white font-black py-3 rounded-xl transition shadow-md flex items-center justify-center gap-2 cursor-pointer text-sm tracking-wider">
+                        ➕ เพิ่มลงในรายการใบเสนอราคา
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 relative border border-gray-100">
+            <button onclick="closeCartModal()" class="absolute top-4 right-4 bg-gray-100 hover:bg-red-600 hover:text-white text-gray-700 w-8 h-8 rounded-full flex items-center justify-center font-black cursor-pointer shadow">✕</button>
+            <h3 class="text-lg font-black text-gray-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-file-invoice-dollar text-red-600"></i> รายการขอใบเสนอราคาทั้งหมด</h3>
+            
+            <div id="cart-items-list" class="space-y-3 max-h-60 overflow-y-auto mb-4 pr-1 text-sm text-gray-500 font-bold">
+                ยังไม่มีรายการสินค้าใดถูกเลือก
+            </div>
+
+            <div class="border-t border-gray-100 pt-4">
+                <button onclick="submitQuoteOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white font-black py-3.5 rounded-xl text-center cursor-pointer shadow-md transition text-sm tracking-wider">
+                    🟢 ส่งรายการให้ฝ่ายขายโรงงานประเมินราคาด่วน
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-gray-500 py-8 border-t border-slate-800 text-center text-xs relative z-20 font-bold">
+        <p class="mb-1 text-gray-400">© 2026 Tipwong Industrial Co., Ltd. All Rights Reserved.</p>
+        <p class="font-normal opacity-70">คลังสินค้าสลักภัณฑ์ น็อต สกรูเกรดอุตสาหกรรม ถนนสุขสวัสดิ์ เขตราษฎร์บูรณะ กรุงเทพมหานคร</p>
+    </footer>
+
+    <script>
+        let currentCart = [];
+        let activeProductTitle = "";
+        let currentPackUnit = 100;
+
+        // ฟังก์ชันสลับหน้าเว็บแบบ Single Page Application (SPA)
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('active');
+            });
+            
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('active');
+            }
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-red-500', 'border-b-2', 'border-red-500');
+                btn.classList.add('text-gray-400');
+            });
+            
+            const activeBtn = document.getElementById('btn-' + pageId);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-gray-400');
+                activeBtn.classList.add('text-red-500', 'border-b-2', 'border-red-500');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // เปิดดูรายละเอียดขนาดความยาวแต่ละกล่อง
+        function openQuickView(title, sizesArray, packUnit) {
+            activeProductTitle = title;
+            currentPackUnit = packUnit;
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-packing-text').innerText = "บรรจุกล่องละ " + packUnit + " ตัว ตามป้ายจริง";
+            
+            const selectElement = document.getElementById('product-size-select');
+            selectElement.innerHTML = "";
+            
+            sizesArray.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.innerText = "ขนาดไซส์ความยาว " + size;
+                selectElement.appendChild(option);
+            });
+
+            document.getElementById('product-qty').value = 1;
+            document.getElementById('total-pieces').innerText = packUnit;
+
+            document.getElementById('quickview-modal').classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickview-modal').classList.add('hidden');
+        }
+
+        function adjustQuantity(amount) {
+            const qtyInput = document.getElementById('product-qty');
+            let currentVal = parseInt(qtyInput.value) || 1;
+            currentVal += amount;
+            if (currentVal < 1) currentVal = 1;
+            qtyInput.value = currentVal;
+            
+            document.getElementById('total-pieces').innerText = (currentVal * currentPackUnit).toLocaleString();
+        }
+
+        function addToCartAndNotify() {
+            const selectedSize = document.getElementById('product-size-select').value;
+            const finalQty = parseInt(document.getElementById('product-qty').value) || 1;
+
+            currentCart.push({
+                name: activeProductTitle,
+                size: selectedSize,
+                qty: finalQty,
+                total: finalQty * currentPackUnit
+            });
+
+            document.getElementById('cart-count').innerText = currentCart.length;
+            alert(`🚀 บันทึกรายการสลักภัณฑ์เรียบร้อย!\nสินค้า: ${activeProductTitle}\nขนาด: ${selectedSize}\nจำนวน: ${finalQty} กล่อง (รวมเป็น ${finalQty * currentPackUnit} ตัว)`);
+            closeQuickView();
+        }
+
+        function openCartModal() {
+            const listContainer = document.getElementById('cart-items-list');
+            if (currentCart.length === 0) {
+                listContainer.innerHTML = `<p class="text-center py-4 text-gray-400">🛒 ยังไม่มีรายการสินค้าใดถูกเลือก</p>`;
+            } else {
+                listContainer.innerHTML = "";
+                currentCart.forEach((item, index) => {
+                    const row = document.createElement('div');
+                    row.className = "flex justify-between items-center bg-gray-50 p-3 rounded-xl border border-gray-200 text-xs text-gray-700 font-bold";
+                    row.innerHTML = `
+                        <div>
+                            <strong class="text-slate-900 block">${item.name}</strong>
+                            <span class="text-red-600">สเปกขนาด: ${item.size}</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-black text-slate-900 block">${item.qty} กล่อง</span>
+                            <span class="text-[10px] text-gray-400">(${item.total.toLocaleString()} ตัว)</span>
+                        </div>
+                    `;
+                    listContainer.appendChild(row);
+                });
+            }
+            document.getElementById('cart-modal').classList.remove('hidden');
+        }
+
+        function closeCartModal() {
+            document.getElementById('cart-modal').classList.add('hidden');
+        }
+
+        function submitQuoteOrder() {
+            if (currentCart.length === 0) {
+                alert("❌ กรุณาเลือกสินค้าลงตะกร้าก่อนส่งครับพี่!");
+                return;
+            }
+            alert("🟢 ระบบจัดส่งชุดข้อมูลสเปกขอเสนอราคาของพี่ ตรงไปยังไลน์และอีเมลของฝ่ายขายโรงงานทิพย์วงศ์ อินดัสเทรียล เรียบร้อยแล้วครับ! เจ้าหน้าที่จะเร่งติดต่อกลับด่วนที่สุดครับ");
+            currentCart = [];
+            document.getElementById('cart-count').innerText = "0";
+            closeCartModal();
+        }
+    </script>
+</body>
+</html>
