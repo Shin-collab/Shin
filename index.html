@@ -72,8 +72,8 @@
         </div>
     </nav>
 
-    <div id="page-home" class="page-section active relative w-full min-h-[550px] md:min-h-[calc(100vh-120px)] flex items-center justify-center overflow-hidden bg-slate-950">
-        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60">
+    <div id="page-home" class="page-section active">
+        <div class="relative w-full min-h-[550px] md:min-h-[calc(100vh-120px)] flex items-center justify-center overflow-hidden bg-slate-950">        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60">
             <source src="assets/tipwong-industrial.mp4" type="video/mp4">
         </video>
         <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 via-slate-900/50 to-slate-950 z-10"></div>
@@ -98,7 +98,52 @@
             </div>
         </div>
     </div>
+    <section id="about-us" class="bg-slate-900 text-gray-100 py-16 px-4 border-b border-slate-800 w-full block">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+            <!-- //ภาพตรงส่วนประวัติ// -->
+            <div class="w-full lg:w-1/2 relative">
+                 <div class="relative bg-slate-800 rounded-lg p-2 overflow-hidden border border-slate-700">
+                   <img src="assets/image/ปลายสว่านหัว F.jpg" alt="ทิพย์วงศ์ อินดัสเทรียล" class="w-full h-[350px] object-cover rounded shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
 
+            <div class="w-full lg:w-1/2 space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="w-12 h-[2px] bg-red-600"></span>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-red-500">About Our Company</h2>
+                </div>
+                
+               <h3 class="text-3xl md:text-4xl font-extrabold text-white">
+                    ประวัติความเป็นมา <span class="text-red-500 whitespace-nowrap">ทิพย์วงศ์ อินดัสเทรียล</span>
+                </h3>
+                
+                <p class="text-gray-300 text-base leading-relaxed">
+                    บริษัท ทิพย์วงศ์ อินดัสเทรียล จำกัด เริ่มต้นก้าวแรกจากการเป็นผู้ผลิตและจัดจำหน่ายสลักภัณฑ์ขนาดเล็ก ด้วยความมุ่งมั่นที่จะยกระดับมาตรฐานงานยึดเจาะในกลุ่มอุตสาหกรรมไทย เราได้พัฒนาเทคโนโลยีการผลิตอย่างต่อเนื่อง จนก้าวขึ้นมาเป็นโรงงานชั้นนำที่ได้รับความไว้วางใจจากผู้รับเหมาและโรงงานอุตสาหกรรมทั่วประเทศ
+                </p>
+
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    เราเชี่ยวชาญการผลิตและกระจายสินค้าประเภท สกรูปลายสว่าน สกรูปลายแหลมสองชั้น สกรูสำหรับไม้ฝา (ไม่มีปีก) และสกรูหัวเตเปอร์ทุกรูปแบบ รองรับทั้งงานโครงสร้างเหล็ก งานหลังคา เมทัลชีท และงานตกแต่งภายใน ด้วยการคัดสรรวัตถุดิบเหล็กเกรดพรีเมียม ผ่านกระบวนการชุบแข็งและเคลือบสารกันสนิมที่ได้มาตรฐานสากล
+                </p>
+
+                <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+                    <div class="text-center md:text-left">
+                        <p class="text-2xl md:text-3xl font-extrabold text-red-500">10+</p>
+                        <p class="text-xs text-gray-400">ปีที่เชี่ยวชาญ</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-2xl md:text-3xl font-extrabold text-white">100%</p>
+                        <p class="text-xs text-gray-400">มาตรฐานสากล</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-2xl md:text-3xl font-extrabold text-white">1,000+</p>
+                        <p class="text-xs text-gray-400">โครงการเลือกใช้</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+     </div>
     <div class="bg-white py-10 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="flex items-start gap-4 p-2">
@@ -155,13 +200,13 @@
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6">
                     <div>
                         <h2 class="text-xl font-black text-gray-900"><i class="fa-solid fa-boxes-stacked text-red-600"></i> รายการสินค้าจากป้ายแท้จริงของโรงงาน</h2>
-                        <p class="text-xs text-gray-400 font-medium">พี่สามารถเอารูปสินค้าทั้ง 7 ใบ มาใส่ตรงช่อง img src ได้เลยครับ</p>
+                        <p class="text-xs text-gray-400 font-medium">สามารถเอารูปสินค้าทั้ง 7 ใบ มาใส่ตรงช่อง img src ได้เลยครับ</p>
                     </div>
                     <span class="bg-green-100 text-green-700 text-xs px-2.5 py-1 rounded-full font-bold w-fit">● มีสินค้าพร้อมจัดส่งทันที</span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
+                    <!-- ส่วนนี้ช่องสินค้า -->
                     <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
                         <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
                         <div class="p-5">
@@ -308,12 +353,159 @@
                             </button>
                         </div>
                     </div>
+<!-- ใส่ข้อมูลเอาเองนะ -->
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
 
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+<!--ok -->
+                    <div class="bg-white rounded-2xl border border-gray-200 hover:border-red-600 transition shadow-sm overflow-hidden flex flex-col justify-between relative group">
+                        <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md z-10 shadow">แท้ 100%</span>
+                        <div class="p-5">
+                            <div class="w-full aspect-square bg-slate-900 rounded-xl mb-4 flex items-center justify-center overflow-hidden border border-slate-800 shadow-inner relative">
+                                <img src="image/ปลายสว่าน.jpg" alt="สกรูหัวเวเฟอร์ ปลายสว่าน" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">กล่องละ 100 ตัว</div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-1 group-hover:text-red-600 transition">สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)</h3>
+                            <p class="text-xs text-gray-400 font-bold mb-2">หมวดหมู่: หัวแบนเจาะเหล็ก</p>
+                            <p class="text-xs text-gray-500 bg-gray-50 p-2.5 rounded border border-gray-100 mb-4 line-clamp-3">
+                                หัวแบนเรียบแนบสนิทผิวงาน ปลายสว่านแข็งแรงพิเศษเจาะทะลุเหล็กได้หนาโดยไม่ต้องใช้สว่านเจาะนำ
+                            </p>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openQuickView('สกรูหัวเวเฟอร์ ปลายสว่าน (Self Drilling)', ['#8×1/2&quot; (13mm.)', '#8×5/8&quot; (16mm.)', '#8×3/4&quot; (19mm.)', '#8×1&quot; (25mm.)', '#8×1-1/4&quot; (32mm.)', '#8×1-1/2&quot; (38mm.)', '#8×2&quot; (50mm.)'], 100)" 
+                                    class="w-full bg-red-600 hover:bg-slate-900 text-white text-xs font-black py-3 rounded-xl shadow-md transition text-center cursor-pointer">
+                                🛒 เลือกขนาดสเปกจริง & สั่งขอราคา
+                            </button>
+                        </div>
+                    </div>
+<!-- ถึงแค่ตรงนี้ถ้าจะเพิ่มเว้นตามข้างบน -->
                 </div>
             </main>
         </div>
     </div>
-
+<!-- ส่วนหัวข้อมูลเทคนิค -->
     <div id="page-tech" class="page-section max-w-7xl mx-auto px-4 py-12">
         <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm">
             <h2 class="text-2xl font-black text-slate-900 mb-2">📄 ตารางข้อมูลเทคนิคเกลียวและสเปกวิศวกรรม</h2>
